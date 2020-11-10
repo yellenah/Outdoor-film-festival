@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+  <title>Home</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="semantic/semantic.min.css" />
+  <script src="semantic/semantic.min.js"></script>
+
+  <style type="text/css">
+    .hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+
+    .ui.vertical.stripe .button+h3,
+    .ui.vertical.stripe p+h3 {
+      margin-top: 3em;
+    }
+
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+
+      .masthead.segment {
+        min-height: 350px;
+      }
+
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+
+    #home {
+      background-image: url(https://headliner.rs/wp-content/uploads/2019/12/Ievenmethappy_Gypsies_mittel-1024x576.jpg);
+      background-position: center top;
+      background-size: cover;
+    }
+  </style>
+
+  <script>
+    $(document).ready(function () {
+
+      $(".masthead").visibility({
+        once: false,
+        onBottomPassed: function () {
+          $(".fixed.menu").transition("fade in");
+        },
+        onBottomPassedReverse: function () {
+          $(".fixed.menu").transition("fade out");
+        },
+      });
+      $(".ui.sidebar").sidebar("attach events", ".toc.item");
+
+    });
+
+  </script>
+</head>
+
+<body>
+  <div class="ui large top fixed hidden inverted menu">
+    <div class="ui container">
+      <a class="item" href="#home">Home</a>
+      <a class="item" href="#about">About</a>
+      <a class="item" href="#news">News</a>
+      <a class="item" href="agenda.html">Agenda</a>
+      <div class="right item">
+        <a class="ui green icon labeled button" href="register.html"><i class="ticket icon"></i>Online tickets</a>
+      </div>
+    </div>
+  </div>
+  <div class="ui vertical inverted sidebar menu">
+    <a class="item" href="#home">Home</a>
+    <a class="item" href="#about">About</a>
+    <a class="item" href="#news">News</a>
+    <a class="item" href="agenda.html">Agenda</a>
+    <a class="ui green icon labeled button" href="register.html"><i class="ticket icon"></i>Online tickets</a>
+  </div>
+  <div class="pusher">
+    <div class="ui inverted vertical masthead center aligned segment" id="home">
+      <div class="ui container">
+        <div class="ui large secondary pointing menu">
+          <a class="toc item">
+            <i class="sidebar icon"></i>
+          </a>
+          <a class="item" href="#home">Home</a>
+          <a class="item" href="#about">About</a>
+          <a class="item" href="#news">News</a>
+          <a class="item" href="agenda.html">Agenda</a>
+          <div class="right item">
+            <a class="ui green icon labeled button" href="register.html"><i class="ticket icon"></i>Online tickets</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="about" class="ui vertical stripe segment container">
+      <h1 class="ui center aligned header">Watch it outside</h1>
+      <h2 class="ui red center aligned header"><i>Boston edition</i></h2>
+      <p style="text-align: justify;">
+        The 10th annual Boston Film Festival is organised by the company
+        <i>Watch it outside</i> and will be held in Boston Public Garden this
+        year from August 5th through 8th, from 6pm to midnight. The Festival is
+        officially recognised by the FIAPF (International Federation of Film
+        Producers Association). The aim of the Festival is to raise awareness
+        and promote international cinema in all its forms as art, entertainment
+        and as an industry, in a spirit of freedom and dialogue. In addition to
+        the sections mentioned in the following paragraphs, the Festival also
+        organises retrospectives and tributes to major figures as a contribution
+        towards a better understanding of the history of cinema.
+        <br />
+        Considering the situation, this year's festival is organised for smaller
+        group of people, so, if you want to visit us, make sure you have
+        reserved your card on time! We will have a small group of celebrity
+        guests, mostly actors and directors. This year, we offer you a large
+        ammount of movies from different countries (on different languages).
+        Also, there will be a live cast every day. We encourage filmophiles
+        whose health isn't great to stay at their homes and watch movies from
+        their cozy sofas!
+        <br />
+        Stay tuned and read our everyday news on our webpage.
+      </p>
+    </div>
+
+
+    <img src="https://www.fest.rs/upload/images/zoom/poster_48_fest2020_hp_.jpg" alt="Skupljaci perja"
+      style="width: 100%" />
+
+
+    <div id="news" class="ui container">
+      <br />
+      <br />
+      <h1 class="ui center aligned header red" style="font-size: 38px;">News</h1>
+      <br />
+      <div class="ui divided items">
+        <div class="item">
+          <div class="image">
+            <img src="https://media.danubeogradu.rs/2020/11/film-praia-do-ventu-eternu-detalj-sa-plakata.jpg">
+          </div>
+          <div class="content">
+            <a class="header">26 years without Milan Mladenovic: Tonight we watch a documentary about him</a>
+            <div class="description">
+              <p style="text-align: justify;">
+                In honor of the front men of the rock group EKV tonight a documentary
+                film <i>Praia Do Ventu Eternu</i> will be shown at the
+                <i>Watch it outside Boston edition</i> film festival. The film is
+                directed by Djordje Marjanovic and produced by
+                <i>Milan Mladenovic foundation</i>. “Film is composed of private
+                VHS videos that were taken while Milan Mladenovic and Mitar Subotic
+                Suba were in Brazil. The picture is followed by excerpts from Milan`s
+                diary of that time and narration of Svetozar Cvetkovic makes the whole
+                film very touching”, says the report of the foundation. <br />
+                Film will be shown tonight at 6 P.M. at the main cinema screen.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img src="https://upload.wikimedia.org/wikipedia/it/7/73/Coffee_and_cigarettes_001.JPG">
+          </div>
+          <div class="content">
+            <a class="header">Looking for love over nicotine and caffeine; Jim Jarmusch talks about <i>Coffee and
+                Cigarettes</i></a>
+            <div class="description">
+              <p style="text-align: justify;">
+                Tonight one of the most famous films of Jim Jarmusch will be shown at
+                our festival <i>Watch it outside Boston edition</i>. Coffee and
+                Cigarettes is a playful, complex film and so is its maker, Jim
+                Jarmusch. This film is a compilation of eleven black-and-white shorts
+                the filmmaker made between 1986 and 2003. In the conversation we had
+                with Jarmusch which opened the film festival he states:
+                “I think our lives are made up of little moments that are not
+                necessarily dramatic, and necessarily dramatic, and for some odd
+                reason I`m attracted to those moments.”
+                This movie is certainly a pleasure to watch so make sure you join the
+                festival and give yourself an unforgettable experience.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img
+              src="https://1.bp.blogspot.com/-hY9BN1UcRG8/WsqbS-vlnjI/AAAAAAAAPxI/O_aU0J8U4NcnPYViZM9wmFTl1Z2HxnSYwCLcBGAs/s1600/natalie-portman-hotel-chevalier-1-4183.jpg">
+          </div>
+          <div class="content">
+            <a class="header">Premiere of Wes Anderson’s Hotel Chevalier at <i>Watch it outside Boston edition</i> movie
+              festival</a>
+            <div class="description">
+              <p style="text-align: justify;">
+                On the last day of the festival guests will have a unique opportunity
+                to be the first to watch Anderson`s new short film. The 13-minute
+                film, which serves as a prologue to <i>Darjeeling</i>, is about an American
+                named Jack, holing up in a fancy Paris hotel, who has an unexpected
+                reunion with an estranged girlfriend. Shot two years ago, before
+                screenwriters Anderson, Schwartzman, and Roman Coppola developed the
+                character into one of the three brothers on Darjeeling‘s rail journey
+                across India, <i>Chevalier</i> sees Anderson working in his customary
+                jewel-box/dollhouse mode, but the form and length really suit each
+                other here.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img
+              src="https://img.buzzfeed.com/buzzfeed-static/static/2020-02/10/0/enhanced/4e2881f23dab/original-503-1581295878-2.jpg?crop=1243:651;0,28">
+          </div>
+          <div class="content">
+            <a class="header">Natalie Portman pays tribute to snubbed female directors at the <i>Watch it outside Boston
+                edition</i> film festival</a>
+            <div class="description">
+              <p style="text-align: justify;">
+                Natalie Portman and her red carpet attire aren't going to let anyone
+                forget about the lack of female directors nominated for film awards
+                this year. Portman, on hand to present, sported a cape on the red
+                carpet featuring the names of women who were overlooked this year in
+                the directing category, including Greta Gerwig (<i>Little Women</i>),
+                Lorene Scafaria (<i>Hustlers</i>) and Lulu Wang (<i>The Farewell</i>).<br />
+                <i>Not all heroes wear capes, but Natalie Portman is now one of
+                  them</i>, declared Harper`s Bazaar. <i>Bravo, Natalie</i>, added Marie
+                Claire.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+
+    <div id="map_wrapper" class="ui container" style="height: 600px;">
+      <div id="map" style="height: 600px"></div>
+    </div>
+
+
+    <br />
+    <br />
+
+    <div class="ui inverted vertical footer segment">
+      <div class="ui container">
+        <div class="ui inverted vertically divided grid">
+          <div class="doubling three column row">
+            <div class="four wide column">
+              <h4 class="ui inverted header">Quick links</h4>
+              <div class="ui inverted link list">
+                <a href="#home" class="item">Home</a>
+                <a href="#about" class="item">About</a>
+                <a href="#news" class="item">News</a>
+                <a href="agenda.html" class="item">Agenda</a>
+                <a href="register.html" class="item">Online tickets</a>
+              </div>
+            </div>
+
+            <div class="four wide column">
+              <h4 class="ui inverted header">Contact us</h4>
+              <div class="ui list">
+                <div class="item">
+                  <i class="users icon"></i>
+                  <div class="content">
+                    Boston film festival
+                  </div>
+                </div>
+                <div class="item">
+                  <i class="marker icon"></i>
+                  <div class="content">
+                    12 Marbee Rd.
+                  </div>
+                </div>
+                <div class="item">
+                  <i class="building outline icon"></i>
+                  <div class="content">
+                    Rockport, MA 01966
+                  </div>
+                </div>
+                <div class="item">
+                  <i class="mail icon"></i>
+                  <div class="content">
+                    <a href="mailto:jack@semantic-ui.com">info@bostonfilmfestival.org</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="eight wide column">
+              <h4 class="ui inverted header">About festival</h4>
+              <p>
+                The 10th annual Boston Film Festival is organised by the company <i>Watch it outside</i> and will be
+                held in
+                Boston Public Garden this year from August 5th through 8th, from 6pm to midnight. The aim of the
+                Festival
+                is to raise awarenessand promote international cinema in all its forms as art, entertainment and as an
+                industry, in a spirit of freedom and dialogue.
+              </p>
+            </div>
+
+          </div>
+          <div class="doubling two column row">
+            <div class="ui eight wide column">
+              <p>Copyright © 2020 All Rights Reserved by Jelena Blagojevic.</p>
+            </div>
+            <div class="ui eight wide column right aligned">
+              <a href="https://www.facebook.com" class="ui circular facebook icon button">
+                <i class="facebook icon"></i>
+              </a>
+              <a href="https://www.twitter.com" class="ui circular twitter icon button">
+                <i class="twitter icon"></i>
+              </a>
+              <a href="https://www.instagram.com" class="ui circular instagram icon button">
+                <i class="instagram icon"></i>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3qAPum_ujtEjigtZgLQ1MP7JoulGiu9c&callback=initMap"></script>
+  <script>
+
+    let map;
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 42.354145, lng: -71.070533 },
+        zoom: 17,
+      });
+
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(42.354145, -71.070533),
+        map: map,
+      });
+    }
+  </script>
+</body>
+
+</html>

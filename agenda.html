@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <title>Agenda</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="semantic/components/dropdown.min.css">
+    <script src="semantic/semantic.min.js"></script>
+    <script src="semantic/components/dropdown.min.js"></script>
+
+    <style type="text/css">
+        body {
+            background-color: #DADADA;
+        }
+
+        body>.grid {
+            height: 100%;
+        }
+
+        .image {
+            margin-top: -100px;
+        }
+
+        .column {
+            max-width: 450px;
+        }
+
+        .footer.segment {
+            padding: 5em 0em;
+        }
+    </style>
+    <script>
+        $(document)
+            .ready(function () {
+                $(".ui.dropdown").dropdown();
+                $(".red-film").click(function (event) {
+                    $("#nazivFilma").html($(this).attr("naziv"));
+                    $("#opisFilma").html($(this).attr("opis"));
+                    var link = $(this).attr("youtube");
+                    link = link.replace("watch?v=", "embed/");
+                    $("#youtubeIframe").attr("src", link);
+                    $(".ui.modal").modal({
+                        onHide: function () {
+                            $("#youtubeIframe").attr("src", "");
+                        }
+                    }).modal("show");
+                })
+            })
+            ;
+    </script>
+</head>
+
+<body>
+    <div class="ui basic modal">
+        <h2 class="ui icon header" id="nazivFilma">
+        </h2>
+        <div class="content">
+            <p id="opisFilma"></p>
+            <iframe id="youtubeIframe" style="width: 100%;" height="400">
+            </iframe>
+        </div>
+        <div class="actions">
+            <div class="ui red ok inverted button">
+                <i class="remove icon icon"></i>
+                Close
+            </div>
+        </div>
+    </div>
+    <div class="ui large top inverted fixed hidden menu">
+        <div class="ui container">
+            <a class="item" href="index.html#home">Home</a>
+            <a class="item" href="index.html#about">About</a>
+            <a class="item" href="index.html#news">News</a>
+            <a class="item" href="agenda.html">Agenda</a>
+            <div class="right item">
+                <a class="ui green icon labeled button" href="register.html"><i class="ticket icon"></i>Online
+                    tickets</a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="ui center aligned container">
+
+        <h1 class="ui blue center aligned icon header">
+            <i class="time circular icon"></i>
+            <div class="content">
+                Agenda
+                <div class="sub header"></div>
+            </div>
+        </h1>
+        <br />
+        <br />
+        <a class="weatherwidget-io" href="https://forecast7.com/en/42d36n71d06/boston/" data-label_1="BOSTON"
+            data-label_2="WEATHER" data-theme="original">BOSTON WEATHER</a>
+
+        <h5 class="ui left aligned header"><i>Friday, 05th August</i></h5>
+        <table class="ui inverted selectable row table">
+            <thead>
+                <tr>
+                    <th class="two wide">Starting time</th>
+                    <th class="seven wide">Name</th>
+                    <th class="two wide">Year</th>
+                    <th class="two wide">Length</th>
+                    <th class="three wide">Genre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="red-film" style="cursor: pointer;" youtube="https://www.youtube.com/watch?v=2j5Dlt_PTpk"
+                    opis="Film is composed of private
+                    VHS videos that were taken while Milan Mladenovic and Mitar Subotic
+                    Suba were in Brazil. The picture is followed by excerpts from Milan`s
+                    diary of that time and narration of Svetozar Cvetkovic makes the whole
+                    film very touching." naziv="Praia Do Venta Eternu">
+                    <td><b>18:00</b></td>
+                    <td>Praia Do Venta Eternu</td>
+                    <td>2020</td>
+                    <td>10min</td>
+                    <td>Documentary</td>
+                </tr>
+                <tr class="red-film" style="cursor: pointer;" youtube="https://www.youtube.com/watch?v=mM6Mpn0-eyQ"
+                    opis="Coffee and Cigarettes is the title of three short films and a 2003 anthology film by independent 
+                    film director Jim Jarmusch. The film consists of 11 short stories which share coffee and cigarettes as a 
+                    common thread, and includes the earlier three short films." naziv="Coffee and Cigarettes">
+                    <td><b>18:15</b></td>
+                    <td>Coffee and Cigarettes</td>
+                    <td>2003</td>
+                    <td>1h 35min</td>
+                    <td>Comedy</td>
+                </tr>    
+                <tr class="red-film" style="cursor: pointer;" youtube="https://www.youtube.com/watch?v=H9jXNXVCYFw"
+                    opis="Two parallel stories about two identical women; one living in Poland, the other in France. 
+                    They don't know each other, but their lives are nevertheless profoundly connected." naziv="The Double Life of Véronique">
+                    <td><b>20:00</b></td>
+                    <td>The Double Life of Véronique</td>
+                    <td>1991</td>
+                    <td>1h 38min</td>
+                    <td>Drama</td>
+                </tr>
+                <tr class="red-film" style="cursor: pointer;" youtube="https://www.youtube.com/watch?v=9e590FeeGCM"
+                    opis="Travis Henderson, an aimless drifter who has been missing for four years, wanders out of the desert and must reconnect 
+                    with society, himself, his life, and his family." naziv="Paris, Texas">
+                    <td><b>21:40</b></td>
+                    <td>Paris, Texas</td>
+                    <td>1984</td>
+                    <td>2h 20min</td>
+                    <td>Drama</td>
+                </tr>    
+            </tbody>
+
+        </table>
+        <h5 class="ui left aligned header"><i>Saturday, 06th August</i></h5>
+        <table class="ui inverted teal selectable row table">
+            <thead>
+                <tr>
+                    <th class="two wide">Starting time</th>
+                    <th class="seven wide">Name</th>
+                    <th class="two wide">Year</th>
+                    <th class="two wide">Length</th>
+                    <th class="three wide">Genre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="red-film" style="cursor: pointer;" youtube="https://www.youtube.com/watch?v=vN-1Mup0UI0"
+                    opis="In the future, a sadistic gang leader is imprisoned and volunteers for a conduct-aversion experiment, but it doesn't go as planned." 
+                    naziv="A clockwork orange">
+                    <td><b>18:00</b></td>
+                    <td>A clockwork orange</td>
+                    <td>1971</td>
+                    <td>2h 15min</td>
+                    <td>Crime</td>
+                </tr>
+                <tr class="red-film" style="cursor: pointer;" youtube="https://www.youtube.com/watch?v=m8pGJBgiiDU"
+                    opis="A quiet observation of the triumphs and defeats of daily life, along with the poetry evident in its smallest details." 
+                    naziv="Paterson">
+                    <td><b>20:15</b></td>
+                    <td>Paterson</td>
+                    <td>2016</td>
+                    <td>2h</td>
+                    <td>Drama</td>
+                </tr>
+                <tr class="red-film" style="cursor: pointer;" youtube="https://www.youtube.com/watch?v=KLGpWN1elJ0"
+                    opis="On lakeside summer holiday, a conflicted older man is dared to have a flirt with two beautiful teenage stepsisters 
+                    despite his betrothal to a diplomat's daughter and the fact that the girls have boyfriends." 
+                    naziv="Le genou de Claire">
+                    <td><b>22:15</b></td>
+                    <td>Le genou de Claire</td>
+                    <td>1970</td>
+                    <td>1h 45min</td>
+                    <td>Drama</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <h5 class="ui left aligned header"><i>Sunday, 07th August</i></h5>
+        <table class="ui inverted brown selectable row table">
+            <thead>
+                <tr>
+                    <th class="two wide">Starting time</th>
+                    <th class="seven wide">Name</th>
+                    <th class="two wide">Year</th>
+                    <th class="two wide">Length</th>
+                    <th class="three wide">Genre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="red-film" style="cursor: pointer;" youtube="https://www.youtube.com/watch?v=IIiDXGGOx_Y"
+                    opis="A photo montage of Cubans filmed by Agnes Varda during her visit to Cuba in 1963. The film 
+                    explores Cuban society and culture post-revolution." naziv="Salut les Cubains">
+                    <td><b>18:00</b></td>
+                    <td>Salut les Cubains</td>
+                    <td>1963</td>
+                    <td>30min</td>
+                    <td>Documentary</td>
+                </tr>
+                <tr class="red-film" style="cursor: pointer;" youtube="https://www.youtube.com/watch?v=_iH0UBYDI4g"
+                    opis="With the help of a German bounty hunter, a freed slave sets out to rescue his wife from a brutal Mississippi 
+                    plantation owner." naziv="Django Unchained">
+                    <td><b>18:30</b></td>
+                    <td>Django Unchained</td>
+                    <td>2012</td>
+                    <td>2h 45min</td>
+                    <td>Western</td>
+                </tr>
+                <tr class="red-film" style="cursor: pointer;" youtube="https://www.youtube.com/watch?v=KnrRy6kSFF0"
+                    opis="In Nazi-occupied France during World War II, a plan to assassinate Nazi leaders by a group of Jewish U.S. soldiers 
+                    coincides with a theatre owner's vengeful plans for the same." naziv="Inglourious Basterds">
+                    <td><b>21:20</b></td>
+                    <td>Inglourious Basterds</td>
+                    <td>2009</td>
+                    <td>2h 40min</td>
+                    <td>War</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <h5 class="ui left aligned header"><i>Monday, 08th August</i></h5>
+        <table class="ui inverted purple  selectable row table">
+            <thead>
+                <tr>
+                    <th class="two wide">Starting time</th>
+                    <th class="seven wide">Name</th>
+                    <th class="two wide">Year</th>
+                    <th class="two wide">Length</th>
+                    <th class="three wide">Genre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="red-film" style="cursor: pointer;" youtube="https://www.youtube.com/watch?v=lSA7mAHolAw"
+                    opis="In a future British tyranny, a shadowy freedom fighter, known only by the alias of V, plots 
+                    to overthrow it with the help of a young woman." naziv="V for Vendetta">
+                    <td><b>18:00</b></td>
+                    <td>V for Vendetta</td>
+                    <td>2005</td>
+                    <td>2h</td>
+                    <td>Action</td>
+                </tr>
+                <tr class="red-film" style="cursor: pointer;" youtube="https://www.youtube.com/watch?v=BnbNu4vl2Q0"
+                    opis="A man against capital punishment is accused of murdering a fellow activist and is sent to death row." 
+                    naziv="The life of David Gale">
+                    <td><b>20:00</b></td>
+                    <td>The life of David Gale</td>
+                    <td>2003</td>
+                    <td>2h</td>
+                    <td>Crime</td>
+                </tr>
+                <tr class="red-film" style="cursor: pointer;" youtube="https://www.youtube.com/watch?v=7d_jQycdQGo"
+                    opis="A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored 
+                    by an instructor who will stop at nothing to realize a student's potential." naziv="Whiplash">
+                    <td><b>22:00</b></td>
+                    <td>Whiplash</td>
+                    <td>2014</td>
+                    <td>1h 45min</td>
+                    <td>Drama</td>
+                </tr>
+                <tr class="red-film" style="cursor: pointer;" youtube="https://www.youtube.com/watch?v=9FUBm1M4WTM"
+                    opis="A prologue of one heart-breaking history of love and the prologue of the travel told in The Darjeeling Limited (2007)."
+                    naziv="Hotel Chevalier">
+                    <td><b>23:45</b></td>
+                    <td>Hotel Chevalier</td>
+                    <td>2007</td>
+                    <td>15min</td>
+                    <td>Short</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+    </div>
+    <div class="ui inverted vertical footer segment">
+        <div class="ui container">
+            <div class="ui vertically divided inverted grid">
+                <div class="doubling three columns row">
+                    <div class="four wide column">
+                        <h4 class="ui inverted header">Quick links</h4>
+                        <div class="ui inverted link list">
+                            <a href="index.html#home" class="item">Home</a>
+                            <a href="index.html#about" class="item">About</a>
+                            <a href="index.html#news" class="item">News</a>
+                            <a href="agenda.html" class="item">Agenda</a>
+                            <a href="register.html" class="item">Online tickets</a>
+                        </div>
+                    </div>
+
+                    <div class="four wide column">
+                        <h4 class="ui inverted header">Contact us</h4>
+                        <div class="ui list">
+                            <div class="item">
+                                <i class="users icon"></i>
+                                <div class="content">
+                                    Boston film festival
+                                </div>
+                            </div>
+                            <div class="item">
+                                <i class="marker icon"></i>
+                                <div class="content">
+                                    12 Marbee Rd.
+                                </div>
+                            </div>
+                            <div class="item">
+                                <i class="building outline icon"></i>
+                                <div class="content">
+                                    Rockport, MA 01966
+                                </div>
+                            </div>
+                            <div class="item">
+                                <i class="mail icon"></i>
+                                <div class="content">
+                                    <a href="mailto:jack@semantic-ui.com">info@bostonfilmfestival.org</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="eight wide column">
+                        <h4 class="ui inverted header">About festival</h4>
+                        <p>
+                            The 10th annual Boston Film Festival is organised by the company <i>Watch it outside</i> and
+                            will be
+                            held in
+                            Boston Public Garden this year from August 5th through 8th, from 6pm to midnight. The aim of
+                            the
+                            Festival
+                            is to raise awarenessand promote international cinema in all its forms as art, entertainment
+                            and as an
+                            industry, in a spirit of freedom and dialogue.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="ui eight wide column">
+                        <p>Copyright © 2020 All Rights Reserved by Jelena Blagojevic.</p>
+                    </div>
+                    <div class="ui eight wide column right aligned">
+                        <a href="https://www.facebook.com" class="ui circular facebook icon button">
+                            <i class="facebook icon"></i>
+                        </a>
+                        <a href="https://www.twitter.com" class="ui circular twitter icon button">
+                            <i class="twitter icon"></i>
+                        </a>
+                        <a href="https://www.instagram.com" class="ui circular instagram icon button">
+                            <i class="instagram icon"></i>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+    </script>
+
+</body>
+
+</html>
